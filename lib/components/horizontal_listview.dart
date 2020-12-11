@@ -16,6 +16,10 @@ class HorizontalList extends StatelessWidget {
             image_location: 'images/icons/icons8-tv-50.png',
             image_caption: 'TV',
           ),
+          Category(
+            image_location: 'images/icons/laptop-40.png',
+            image_caption: 'Laptop',
+          ),
         ],
       ),
     );
@@ -31,18 +35,19 @@ class Category extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(2.0),
+      padding: const EdgeInsets.only(left: 0, right: 0),
       child: InkWell(
         onTap: () {},
         child: Container(
           width: 100.0,
+          height: 40.0,
           child: ListTile(
             title: Image.asset(
               image_location,
               width: 100.0,
-              height: 80.0,
+              height: 40.0,
             ),
-            subtitle: Text(image_caption),
+            subtitle: Center(child: Text(image_caption, style: TextStyle(fontSize: 17.0),)),
           ),
         ),
       ),
