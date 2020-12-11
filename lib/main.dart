@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
+import 'package:electron_ecom/components/horizontal_listview.dart';
+
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -19,18 +21,22 @@ class _HomePageState extends State<HomePage> {
     Widget image_carousel = new Container(
       height: 200.0,
       child: Carousel(
-        boxFit: BoxFit.cover,
+        boxFit: BoxFit.contain,
         images: [
-          AssetImage('images/c1.jpg'),
-          AssetImage('images/m1.jpeg'),
-          AssetImage('images/m2.jpg'),
-          AssetImage('images/w1.jpeg'),
-          AssetImage('images/w3.jpeg'),
-          AssetImage('images/w4.jpeg'),
+          AssetImage('images/laptop/laptop1.jpg'),
+          AssetImage('images/tv/tv1.jpg'),
+          AssetImage('images/tv/tv2.jpg'),
+          AssetImage('images/tv/tv3.jpg'),
+          AssetImage('images/tv/tv4.jpg'),
+          AssetImage('images/laptop/laptop2.jpg'),
         ],
-        autoplay: false, //images not rolling
-        animationCurve: Curves.fastOutSlowIn,
+        autoplay: true, //images not rolling
+        animationCurve: Curves.decelerate,
         animationDuration: Duration(milliseconds: 1000),
+        autoplayDuration: Duration(milliseconds: 5000),
+        dotColor: Colors.white,
+        dotSize: 4.0,
+        indicatorBgPadding: 4.0,
       ),
     );
     return Scaffold(
@@ -120,7 +126,13 @@ class _HomePageState extends State<HomePage> {
     ),
       body: ListView(
         children: <Widget>[
-          image_carousel
+          image_carousel,
+          // padding categories text widget
+          Padding(padding: const EdgeInsets.all(8.0),
+          child: Text('Categories',),
+          ),
+          // Horizontal list view
+          HorizontalList(),
         ],
       ),
     );
