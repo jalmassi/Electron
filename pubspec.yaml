@@ -57,6 +57,8 @@ flutter:
     - images/tv/tv4.jpg
     - images/laptop/laptop1.jpg
     - images/laptop/laptop2.jpg
+    - images/icons/game-controller-30.png
+    - images/icons/icons8-tv-50.png
 
 #    - images/c1.jpg
 #    - images/m1.jpeg

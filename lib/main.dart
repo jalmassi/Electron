@@ -133,7 +133,7 @@ class _HomePageState extends State<HomePage> {
           ),
           // Horizontal list view
           HorizontalList(),
-          Category()
+
         ],
       ),
     );
