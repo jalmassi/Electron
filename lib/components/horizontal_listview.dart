@@ -22,11 +22,17 @@ class Category extends StatelessWidget {
   Category({
     this.image_location,
     this.image_caption
-})
+});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-
+    return Padding(padding: const EdgeInsets.all(2.0),
+        child: InkWell(onTap: (){},
+          child: ListTile(
+            title: Image.asset(image_location),
+            subtitle: Text(image_caption),
+          ),    
+        ),
     );
   }
 }
